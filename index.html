@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airline Fare Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>✈ Airline Fare Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="number" name="airline" placeholder="Airline Code" required>
+        <input type="number" name="source" placeholder="Source Code" required>
+        <input type="number" name="destination" placeholder="Destination Code" required>
+        <input type="number" name="stops" placeholder="Stops" required>
+        <input type="number" name="duration" placeholder="Duration (min)" required>
+        <input type="number" name="day" placeholder="Day" required>
+        <input type="number" name="month" placeholder="Month" required>
+        <button type="submit">Predict</button>
+    </form>
+    <h2>{{ prediction_text }}</h2>
+</div>
+</body>
+</html>
